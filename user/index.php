@@ -66,8 +66,6 @@ PAGE : HOME
 
        <td><a href="http://localhost/couse_backend_assignment/user/">HOME</a></td>
 
-       <td><a href="http://localhost/couse_backend_assignment/user/statistik.php">STATISTIK</a></td>
-
        <td><a href="http://localhost/couse_backend_assignment/user/inputscore.php">INPUT SCORE</a></td>       
 
        <td><a href="http://localhost/couse_backend_assignment/user/leaderboard.php">LEADERBOARD</a></td>

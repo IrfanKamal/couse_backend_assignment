@@ -58,7 +58,7 @@ class Database
 
        return mysqli_query($conn,"CALL ".$procedure);
 
-   }   
+   }
 
 }
 
