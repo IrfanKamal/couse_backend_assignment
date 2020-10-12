@@ -79,7 +79,7 @@ if($notification)
 
 ?>
 
-PAGE : LEADERBOARD
+PAGE : INPUT SCORE
 
 <table border=1>
 
@@ -101,7 +101,7 @@ PAGE : LEADERBOARD
 
 <br>
 
-<form action="http://localhost/couse_backend_assignment/user/leaderboard.php" method='GET'>
+<form action="http://localhost/couse_backend_assignment/user/inputscore.php" method='GET'>
 
        Pilih Game
 
@@ -136,7 +136,7 @@ PAGE : LEADERBOARD
 if ($game_id) 
 {
     ?>
-    <form action="http://localhost/couse_backend_assignment/user/leaderboard.php" method='GET'>
+    <form action="http://localhost/couse_backend_assignment/user/inputscore.php" method='GET'>
 
     Pilih Level
 
@@ -188,47 +188,13 @@ if ($level)
 
     <br>
 
-    <table border=1>
+    <form action = "inputscore_process.php" method="POST">
 
-    <tr><td>NO</td><td>NAMA</td><td>SCORE</td><td>WAKTU</td></tr>
+    Score :
 
-    <?php
+    <input type="text" name="score" required>
 
-    $leaderboarddata = $db->get("SELECT user_tbl.nama_user as nama_user, score_tbl.score as score, score_tbl.waktu_score as waktu FROM user_tbl, score_tbl WHERE user_tbl.email = score_tbl.email AND score_tbl.game_id = ".$game_id." AND score_tbl.level = ".$level." ORDER BY score DESC");
-
-    $no = 0;
-
-    if ($leaderboarddata)
-    {
-
-        while($row = mysqli_fetch_assoc($leaderboarddata))
-
-        {
-
-            $no++;
-
-            ?>
-
-            <tr>
-
-            <td><?php echo $no?></td>
-
-            <td><?php echo $row['nama_user']?></td>
-
-            <td><?php echo $row['score']?></td>
-
-            <td><?php echo $row['waktu']?></td>               
-
-            </tr>
-
-            <?php
-
-        }
-    }
-
-    ?>
-
-    </table>
+    <input type="submit" value="Input Score">
 
     <?php
 }
